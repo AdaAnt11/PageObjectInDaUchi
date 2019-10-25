@@ -5,7 +5,7 @@ class UchiSearchLocators:
     LOCATOR_LOGIN_FIELD = (By.ID, "login")
     LOCATOR_PASSWORD_FIELD = (By.ID, "password")
     LOCATOR_LOGIN_BUTTON = (By.CLASS_NAME, "login-form__submit")
-    LOCATOR_AVATAR = (By.CSS_SELECTOR, ".small.link")
+    LOCATOR_BUTTON_EXIT = (By.CSS_SELECTOR, ".small.link")
 
 class LoginStudent(BasePage):
 
@@ -22,6 +22,6 @@ class LoginStudent(BasePage):
         return self.find_element(UchiSearchLocators.LOCATOR_LOGIN_BUTTON,time=2).click()
 
     def check_login_on_main_student_page(self):
-        list = self.find_elements(UchiSearchLocators.LOCATOR_AVATAR,time=2)
-        nav_bar_menu = [x.text for x in list if len(x.text) > 0]
-        return nav_bar_menu
+        list = self.find_elements(UchiSearchLocators.LOCATOR_BUTTON_EXIT,time=2)
+        button_exit = [x.text for x in list if len(x.text) > 0]
+        return button_exit
