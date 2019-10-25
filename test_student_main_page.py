@@ -6,3 +6,5 @@ def test_student_login(browser):
     uchi_main_page.enter_login_data(login=22, password='космос')
     uchi_main_page.click_on_the_login_button()
 
+    elements = uchi_main_page.check_login_on_main_student_page()
+    assert "ВЫХОД" in elements
